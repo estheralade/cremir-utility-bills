@@ -2,19 +2,14 @@
 
 namespace App\Models;
 
+use App\Models\Traits\BelongsToUser;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Wallet extends Model
 {
-    use HasFactory;
+    /* Transaction relationship  */
+    use BelongsToUser;
 
-    /*
-     * RELATIONSHIPS
-     */
-    public function user(): BelongsTo
-    {
-        return $this->belongsTo(User::class);
-    }
+    use HasFactory;
 }
